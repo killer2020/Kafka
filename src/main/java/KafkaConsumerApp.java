@@ -20,16 +20,9 @@ public class KafkaConsumerApp
 		TopicPartition topicPartition_1 = new TopicPartition(topicName, 1);
 		List<TopicPartition> partitionList = Arrays.asList(topicPartition_0);
 		 
-//		subscribeToPartition(consumer, partitionList);
 		subscribeToTopic(topicName, consumer);
-
 		System.out.println("Subscribed to topic " + topicName);
-
 		syso("Consumer started:");
-		
-		
-		int startingOffset = 1300;
-//		startReadingFromOffset(consumer, topicPartition_1, startingOffset);
 		
 		while (true)
 		{

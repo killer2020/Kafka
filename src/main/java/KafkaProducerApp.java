@@ -9,7 +9,6 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.utils.Utils;
 
-//Create java class named “SimpleProducer”
 public class KafkaProducerApp
 {
 
@@ -34,7 +33,6 @@ public class KafkaProducerApp
 			
 			sendToTopic(topicName, producer, key, value);
 			int partition = 1;
-//			sendToTopicAndPartition(topicName,partition, producer, key, value);
 			syso("Message sent");
 		}
 		
