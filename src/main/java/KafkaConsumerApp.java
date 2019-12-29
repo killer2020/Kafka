@@ -24,6 +24,8 @@ public class KafkaConsumerApp
 		System.out.println("Subscribed to topic " + topicName);
 		syso("Consumer started:");
 		
+		startReadingFromBeginning(consumer,partitionList);
+		
 		while (true)
 		{
 			ConsumerRecords<String, String> records = consumer.poll(100);
@@ -42,6 +44,13 @@ public class KafkaConsumerApp
 		consumer.seek(topicPartition_0, startingOffset);
 	}
 
+	private static void startReadingFromBeginning(KafkaConsumer<String, String> consumer, List<TopicPartition> partitionList)
+	{
+		dummyPollCallBeforeSeek(consumer);
+		consumer.seekToBeginning(partitionList);
+	}
+	
+	
 	private static void dummyPollCallBeforeSeek(KafkaConsumer<String, String> consumer)
 	{
 		consumer.poll(1);
