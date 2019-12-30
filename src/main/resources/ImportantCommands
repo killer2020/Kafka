@@ -19,3 +19,9 @@ bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic
 
 Change retention of topic
 kafka-topics.bat --zookeeper localhost:2181 --alter --topic topic_3 --config retention.ms=604800000
+
+List of brokers running in a cluster
+zookeeper-shell.bat localhost:2181 ls /brokers/ids
+
+Check partitions/leader od topic/partitions
+kafka-topics.bat --describe --zookeeper localhost:2181 --topic topic_p2_r3
