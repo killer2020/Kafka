@@ -12,9 +12,9 @@ public class KafkaConsumerApp
 
 	public static void main(String[] args) throws Exception
 	{
-		String topicName = "topic_3";
+		String topicName = "topic_p1_r1";
 
-		KafkaConsumer<String, String> consumer = createKafkaConsumer("localhost:9092", "console-consumer-25074");
+		KafkaConsumer<String, String> consumer = createKafkaConsumer("localhost:9092", "random console group");
 
 		TopicPartition topicPartition_0 = new TopicPartition(topicName, 0);
 		TopicPartition topicPartition_1 = new TopicPartition(topicName, 1);
@@ -24,7 +24,7 @@ public class KafkaConsumerApp
 		System.out.println("Subscribed to topic " + topicName);
 		syso("Consumer started:");
 		
-		startReadingFromBeginning(consumer,partitionList);
+//		startReadingFromBeginning(consumer,partitionList);
 		
 		while (true)
 		{

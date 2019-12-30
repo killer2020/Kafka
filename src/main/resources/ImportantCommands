@@ -35,3 +35,8 @@ Start consumer on multi broker cluster
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic_p1_r3
 or this also works stating one of the server
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic topic_p1_r3(will still read if 9092 goes down)
+
+
+Starting producer with a consumer group
+
+
