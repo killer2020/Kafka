@@ -25,3 +25,13 @@ zookeeper-shell.bat localhost:2181 ls /brokers/ids
 
 Check partitions/leader od topic/partitions
 kafka-topics.bat --describe --zookeeper localhost:2181 --topic topic_p2_r3
+
+Start producer multi broker cluster
+bin\windows\kafka-console-producer.bat --broker-list localhost:9092,localhost:9093,localhost:9094 --topic topic_p1_r3
+or this also works stating one of the server
+bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic topic_p1_r3(will still send if 9092 goes down)
+
+Start consumer on multi broker cluster
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic topic_p1_r3
+or this also works stating one of the server
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic topic_p1_r3(will still read if 9092 goes down)
